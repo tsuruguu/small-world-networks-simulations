@@ -22,4 +22,5 @@ hold off;
 xlim([0 4]); ylim([-0.05 0.75]);
 set(gca, 'XTick', 0:0.5:4, 'YTick', 0:0.1:0.7);
 grid on; box on;
-% xlabel('\alpha'); ylabel('c in T \sim n^c');
+xlabel('exponent \alpha  (P(link of length r) \propto r^{-\alpha})'); ylabel('exponent c  in  T \sim n^c');
+text(2.15, 0.05, '\alpha = 2: T = O(log^2 n)', 'Color', orange);

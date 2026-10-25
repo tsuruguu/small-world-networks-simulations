@@ -37,3 +37,6 @@ axis equal;
 xlim([-0.5 n-0.5]); ylim([-0.5 n-0.5]);
 set(gca, 'XTick', 0:n-1, 'YTick', 0:n-1);
 box on;
+text(0.15, -0.35, 's', 'FontSize', 14, 'FontWeight', 'bold', 'Color', blue);
+text(4.65, 5.15, 't', 'FontSize', 14, 'FontWeight', 'bold', 'Color', orange);
+xlabel('lattice column'); ylabel('lattice row');

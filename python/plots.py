@@ -1,6 +1,5 @@
 """
-All figures in a MATLAB-like style, without titles, legends or axis labels
-(those were added by hand on the slides).
+All figures in a MATLAB-like style, with axis labels.
 
 Writes to ../figures/:
     ws_clustering_path_length.png   C(p)/C(0) and L(p)/L(0) vs p
@@ -34,7 +33,7 @@ DARK = (0.15, 0.15, 0.15)
 GREY = (0.6, 0.6, 0.6)
 
 plt.rcParams.update({
-    "font.family": "DejaVu Sans", "font.size": 11,
+    "font.family": "DejaVu Sans", "font.size": 11, "axes.labelsize": 12,
     "xtick.direction": "in", "ytick.direction": "in",
     "xtick.top": True, "ytick.right": True, "axes.linewidth": 0.6,
 })
@@ -79,6 +78,9 @@ def plot_ws():
     ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1])
     ax.grid(True, which="major", color=DARK, alpha=0.15, lw=0.5)
     ax.grid(True, which="minor", color=DARK, alpha=0.08, lw=0.4, ls=":")
+    ax.set_xlabel("rewiring probability p")
+    ax.set_ylabel("normalised value")
+    ax.legend(["C(p) / C(0)", "L(p) / L(0)"], loc="lower left", frameon=True, edgecolor=DARK)
     style(ax, grid=False)
     save(fig, "ws_clustering_path_length.png")
 
@@ -112,6 +114,10 @@ def plot_kleinberg_grid():
     ax.set_ylim(-0.5, 5.5)
     ax.set_xticks(range(6))
     ax.set_yticks(range(6))
+    ax.text(0.15, -0.35, "s", fontsize=14, fontweight="bold", color=BLUE)
+    ax.text(4.65, 5.15, "t", fontsize=14, fontweight="bold", color=ORANGE)
+    ax.set_xlabel("lattice column")
+    ax.set_ylabel("lattice row")
     style(ax, grid=False)
     save(fig, "kleinberg_grid.png")
 
@@ -132,6 +138,9 @@ def plot_kleinberg_alpha():
     ax.set_ylim(-0.05, 0.75)
     ax.set_xticks(np.arange(0, 4.01, 0.5))
     ax.set_yticks(np.arange(0, 0.71, 0.1))
+    ax.set_xlabel("exponent α  (P(link of length r) ∝ r$^{-α}$)")
+    ax.set_ylabel("exponent c  in  T ~ n$^c$")
+    ax.annotate("α = 2: T = O(log² n)", xy=(2, 0), xytext=(2.15, 0.05), color=ORANGE)
     style(ax)
     save(fig, "kleinberg_phase_transition.png")
 
@@ -160,6 +169,9 @@ def plot_epidemic():
     ax.set_ylim(0, 105)
     ax.set_xticks(range(0, 61, 10))
     ax.set_yticks(range(0, 101, 20))
+    ax.set_xlabel("time step t")
+    ax.set_ylabel("infected [%]")
+    ax.legend(["p = 0", "p = 0.01", "p = 0.1"], loc="lower right", frameon=True, edgecolor=DARK)
     style(ax)
     save(fig, "si_epidemic.png")
 
@@ -177,6 +189,9 @@ def plot_greedy():
     ax.set_ylim(0, 50)
     ax.set_xticks(step)
     ax.set_yticks(range(0, 51, 10))
+    ax.set_xlabel("step in chain")
+    ax.set_ylabel("share of choices [%]")
+    ax.legend(["closer geographically", "similar occupation"], loc="upper left", frameon=True, edgecolor=DARK)
     style(ax)
     save(fig, "greedy_search_dodds.png")
 

@@ -54,7 +54,7 @@ python plots.py            # writes all figures to ../figures/
 
 ### MATLAB
 
-Open any script in `matlab/` and run it. Each one is self-contained (data are embedded) and produces one figure. Axis labels and legends are commented out at the end of every script, so you can enable them or label the figure yourself.
+Open any script in `matlab/` and run it. Each one is self-contained (data are embedded) and produces one labelled figure.
 
 ## Results
 

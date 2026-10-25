@@ -17,4 +17,5 @@ hold off;
 
 xlim([1e-4 1]); ylim([0 1.05]);
 grid on; box on;
-% xlabel('p'); ylabel('normalised value'); legend('C(p)/C(0)', 'L(p)/L(0)');
+xlabel('rewiring probability p'); ylabel('normalised value');
+legend('C(p) / C(0)', 'L(p) / L(0)', 'Location', 'southwest');

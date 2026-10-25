@@ -17,4 +17,5 @@ hold off;
 xlim([0.8 7.2]); ylim([0 50]);
 set(gca, 'XTick', 1:7, 'YTick', 0:10:50);
 grid on; box on;
-% xlabel('step in chain'); ylabel('% of choices'); legend('location', 'occupation');
+xlabel('step in chain'); ylabel('share of choices [%]');
+legend('closer geographically', 'similar occupation', 'Location', 'northwest');

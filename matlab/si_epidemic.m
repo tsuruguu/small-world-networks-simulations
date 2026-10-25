@@ -22,4 +22,5 @@ hold off;
 xlim([0 60]); ylim([0 105]);
 set(gca, 'XTick', 0:10:60, 'YTick', 0:20:100);
 grid on; box on;
-% xlabel('time step'); ylabel('infected [%]'); legend('p = 0', 'p = 0.01', 'p = 0.1');
+xlabel('time step t'); ylabel('infected [%]');
+legend('p = 0', 'p = 0.01', 'p = 0.1', 'Location', 'southeast');
